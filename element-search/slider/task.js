@@ -3,7 +3,7 @@ const sliderRight = document.querySelector('.slider__arrow_next');
 const sliderItems = document.getElementsByClassName('slider__item');
 let activeImg = 0;
 
-const changeImgLeft = function () {
+const changeImgRight = function () {
     sliderItems[activeImg].classList.remove('slider__item_active');
     activeImg += 1;
 
@@ -15,7 +15,7 @@ const changeImgLeft = function () {
     return activeImg;
 };
 
-const changeImgRight = function () {
+const changeImgLeft = function () {
     sliderItems[activeImg].classList.remove('slider__item_active');
     activeImg -= 1;
 
