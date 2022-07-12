@@ -1,9 +1,19 @@
 const timer = document.getElementById('timer');
+let timerId;
 
-setInterval(() => {
+function counter() {
     if (Number(timer.textContent) !== 0) {
         timer.textContent = Number(timer.textContent) - 1;
     } else {
         alert('Вы победили в конкурсе!');
-    }
-}, 1000);
+        clearInterval(timerId);
+    };
+};
+
+timerId = setInterval(counter, 1000)
+
+
+
+
+
+
