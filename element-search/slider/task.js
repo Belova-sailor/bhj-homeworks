@@ -2,11 +2,8 @@ const sliderItem = Array.from(document.querySelectorAll('.slider__item'));
 const sliderLeft = document.querySelector('.slider__arrow_prev');
 const sliderRight = document.querySelector('.slider__arrow_next');
 
-let activeSlider = sliderItem.findIndex((index) => {
-    return index.className === "slider__item slider__item_active"
-});
-
 const changeImgRight = function () {
+    let activeSlider = sliderItem.findIndex((index) => index.className === "slider__item slider__item_active");
     sliderItem[activeSlider].classList.remove('slider__item_active');
     activeSlider += 1;
 
@@ -14,11 +11,11 @@ const changeImgRight = function () {
         activeSlider = 0;
     };
 
-    sliderItem[activeSlider].classList.add('slider__item_active');
-    return activeSlider;
+    sliderItem[activeSlider].classList.add('slider__item_active')
 };
 
 const changeImgLeft = function () {
+    let activeSlider = sliderItem.findIndex((index) => index.className === "slider__item slider__item_active");
     sliderItem[activeSlider].classList.remove('slider__item_active');
     activeSlider -= 1;
 
@@ -26,8 +23,7 @@ const changeImgLeft = function () {
         activeSlider = sliderItem.length - 1;
     };
 
-    sliderItem[activeSlider].classList.add('slider__item_active');
-    return activeSlider;
+    sliderItem[activeSlider].classList.add('slider__item_active')
 };
 
 sliderLeft.addEventListener('click', changeImgLeft);
