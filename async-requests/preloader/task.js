@@ -4,7 +4,7 @@ const xhr = new XMLHttpRequest();
 xhr.open('GET', requestURL);
 
 xhr.onload = () => {
-    if (xhr.readyState === xhr.DONE) {
+    if (xhr.readyState === xhr.DONE && xhr.status < 400) {
         const valuteObj = xhr.response.response['Valute'];
         const loader = document.querySelector('.loader');
         const itemValute = document.querySelector('.item');
@@ -21,6 +21,8 @@ xhr.onload = () => {
                     </div><div class="item__currency">руб.</div>`)
             }
         }
+    } else {
+        console.error(xhr.response)
     }
 }
 
